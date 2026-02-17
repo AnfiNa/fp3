@@ -82,4 +82,4 @@ jobs:
     
     - name: Run Fourmolu (check mode)
       run: |
-        fourmolu --mode check src/ test/ app/
+        fourmolu --mode check src/ tests/
