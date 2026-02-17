@@ -6,7 +6,6 @@ module App
     initialAlgoStates,
     advanceAlgorithms,
     formatLine,
-    simulateSequential,
   )
 where
 
@@ -96,13 +95,3 @@ calculate (AlgNewton n) = newtonValue n
 
 formatLine :: Algorithm -> Double -> Double -> String
 formatLine alg x y = algorithmName alg ++ ": " ++ show x ++ " " ++ show y
-
-simulateSequential :: Double -> [Algorithm] -> [Point] -> [Output]
-simulateSequential step algorithms points =
-  let initialStates = initialAlgoStates algorithms
-      processPoint (accPoints, states, allOutputs) point =
-        let newAccPoints = accPoints ++ [point]
-            (newStates, outputs) = advanceAlgorithms step newAccPoints states
-         in (newAccPoints, newStates, allOutputs ++ outputs)
-      (_, _, finalOutputs) = foldl processPoint ([], initialStates, []) points
-   in finalOutputs
