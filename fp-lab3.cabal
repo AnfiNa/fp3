@@ -1,0 +1,25 @@
+cabal-version:       3.0
+name:                fp-lab3
+version:             0.1.0.0
+
+executable fp-lab3
+  hs-source-dirs:      src
+  main-is:             Main.hs
+  other-modules:       App
+                     , Interpolation
+                     , Types
+  default-language:    Haskell2010
+  build-depends:       base >= 4.7 && < 5
+
+test-suite fp-lab3-test
+  type:                exitcode-stdio-1.0
+  hs-source-dirs:      tests
+                     , src
+  main-is:             Test.hs
+  other-modules:       App
+                     , Interpolation
+                     , Types
+  default-language:    Haskell2010
+  build-depends:       base >= 4.7 && < 5
+                     , HUnit
+                     , QuickCheck
