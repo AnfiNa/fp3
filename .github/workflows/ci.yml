@@ -82,4 +82,4 @@ jobs:
     
     - name: Run Fourmolu (check mode)
       run: |
-        fourmolu --mode check src/ test/ app/ || echo "Fourmolu found formatting issues. Run 'fourmolu --mode inplace src/ test/ app/' locally to fix."
+        fourmolu --mode check src/ test/ app/
