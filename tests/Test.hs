@@ -2,12 +2,12 @@
 
 module Main (main) where
 
+import App
 import Control.Monad (unless, zipWithM_)
+import Data.Maybe (isNothing)
+import Interpolation
 import Test.HUnit
 import qualified Test.QuickCheck as QC
-import Data.Maybe (isNothing)
-import App
-import Interpolation
 import Types (Point (Point, px, py))
 
 main :: IO ()
