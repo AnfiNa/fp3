@@ -108,8 +108,8 @@ prop_linearOutside = QC.forAll genLinearCase $ \(x1, dx, a, b, _) ->
       outsideLeft = x1 - dx
       outsideRight = x2 + dx
   in QC.conjoin
-       [ QC.counterexample "значение слева" (linearValue points outsideLeft == Nothing)
-       , QC.counterexample "значение справа" (linearValue points outsideRight == Nothing)
+       [ QC.counterexample "значение слева" (isNothing (linearValue points outsideLeft))
+       , QC.counterexample "значение справа" (isNothing (linearValue points outsideRight))
        ]
 
 -- | Генератор для тестирования интерполяции Ньютона на многочленах
