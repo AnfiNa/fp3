@@ -60,12 +60,7 @@ jobs:
         cabal install hlint
     
     - name: Run HLint
-      run: |
-        hlint tests/Test.hs --refactor --refactor-options="-i"
-        hlint src/App.hs --refactor --refactor-options="-i"
-        hlint src/Interpolation.hs --refactor --refactor-options="-i"
-        hlint src/Main.hs --refactor --refactor-options="-i"
-        hlint src/Types.hs --refactor --refactor-options="-i"
+      run: 
         hlint src/ tests/
 
   fourmolu:
@@ -87,4 +82,4 @@ jobs:
     
     - name: Run Fourmolu (check mode)
       run: |
-        fourmolu --mode check src/ test/ app/ || echo "Fourmolu found formatting issues. Run 'fourmolu --mode inplace src/ test/ app/' locally to fix."
+        fourmolu --mode check src/ test/ app/
