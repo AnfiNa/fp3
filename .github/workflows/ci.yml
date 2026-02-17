@@ -61,11 +61,11 @@ jobs:
     
     - name: Run HLint
       run: |
-        hlint src/App.hs --refactor-options="-i"
-        hlint src/Interpolation.hs --refactor-options="-i"
-        hlint src/Main.hs --refactor-options="-i"
-        hlint src/Types.hs --refactor-options="-i"
-        hlint tests/Test.hs --refactor-options="-i"
+        hlint tests/Test.hs --refactor --refactor-options="-i"
+        hlint src/App.hs --refactor --refactor-options="-i"
+        hlint src/Interpolation.hs --refactor --refactor-options="-i"
+        hlint src/Main.hs --refactor --refactor-options="-i"
+        hlint src/Types.hs --refactor --refactor-options="-i"
         hlint src/ tests/
 
   fourmolu:
