@@ -5,7 +5,7 @@ module Main (main) where
 import Control.Monad (unless, zipWithM_)
 import Test.HUnit
 import qualified Test.QuickCheck as QC
-
+import Data.Maybe (isNothing)
 import App
 import Interpolation
 import Types (Point (Point, px, py))
