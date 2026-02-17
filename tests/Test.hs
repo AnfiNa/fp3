@@ -5,7 +5,7 @@ import Control.Monad (unless, zipWithM_)
 import Test.HUnit
 import qualified Test.QuickCheck as QC
 
-import App (simulateSequential)
+import App
 import Interpolation
 import Types (Point(Point, px, py))
 
